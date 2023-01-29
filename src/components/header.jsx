@@ -13,7 +13,7 @@ function Header() {
         <div className={`contenedor ${styles.barra}`}>
             <div className={styles.logo}>
                  <Image src='/img/gafas-de-sol.png' width={80} height={20} alt='imagen logo'/>
-                 <p>GafasMdq</p>
+                 <h1>GafasMdq</h1>
             </div>
             <nav className={styles.navegacion}>
                 <Link 

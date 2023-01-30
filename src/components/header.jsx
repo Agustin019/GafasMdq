@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from '../styles/header.module.css'
+import ImagenCarrito from '../../public/img/carrito.png'
 
 function Header() {
 
@@ -39,6 +40,10 @@ function Header() {
                     href='/blog' 
                     className={router.pathname === '/blog' ? styles.activo : '' }>
                 Blog</Link>
+
+                <Link href={'/carrito'}>
+                    <Image src={ImagenCarrito} width={30} height={30} alt='Icono del carrito de compras'/>
+                </Link>
             </nav>
         </div>
 

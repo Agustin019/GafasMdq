@@ -31,9 +31,6 @@
   .contenido{
     grid-row: 1/2 ;
   }
-  .img{
-
-  }
 }
 
 .img_secundarias{
@@ -43,11 +40,13 @@
 
 .enlace {
   margin: 2rem auto auto auto;
+  border: none;
+  cursor: pointer;
   display: block;
   background-color: var(--black);
   color: var(--white);
   text-decoration: none;
-  padding: 1rem;
+  padding: 1.3rem;
   text-align: center;
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -89,4 +88,24 @@
 .anteojo img:hover {
   transition: 300ms;
   transform: scale(1.2);
+}
+
+.formulario{
+  margin-top: 4rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario label{
+  font-size: 2.2rem;
+}
+
+.formulario select{
+  border: 1px solid rgb(187, 186, 186);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+  margin-top: 1rem;
 }

@@ -1,11 +1,31 @@
+import { useState } from "react";
 import Image from "next/image"
-import Link from "next/link"
 import styles from '../../styles/anteojoUrl.module.css'
 import Layout from "@/components/layout";
 
-export default function AnteojoUrl({ anteojo }) {
-    console.log(anteojo);
+export default function AnteojoUrl({ anteojo, agregarCarrito }) {
+
+    const [cantidad, setCantidad] = useState(0)
     const { nombre, imagenes, precio, descripcion } = anteojo[0].attributes
+
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        if (cantidad < 1) {
+            alert('Seleccione una cantidad')
+            return
+        }
+
+        const anteojoSeleccionado = {
+            id: anteojo[0].id,
+            imagen:imagenes.data[0].attributes.formats.medium.url,
+            nombre,
+            precio,
+            cantidad,
+        }
+
+        agregarCarrito(anteojoSeleccionado);
+    }
     return (
         <Layout
             title={`Guitarra ${nombre}`}
@@ -23,7 +43,29 @@ export default function AnteojoUrl({ anteojo }) {
                     <h3>{nombre}</h3>
                     <p className={styles.descripcion}>{descripcion}</p>
                     <p className={styles.precio}>${precio}</p>
-                    <Link className={styles.enlace} href={''}>Agregar al carrito</Link>
+
+                    <form 
+                        className={styles.formulario}
+                        onSubmit={handleSubmit}
+                        >
+                        <label htmlFor="cantidad">Cantidad</label>
+                        <select
+                            onChange={e => setCantidad(+e.target.value)}
+                            id="cantidad"
+                        >
+                            <option value="0">-- Seleccione --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <input
+                            type="submit"
+                            className={styles.enlace}
+                            value='Agregar al carrito'
+                        />
+                    </form>
                 </div>
             </div>
         </Layout>
@@ -58,14 +100,4 @@ export async function getStaticProps({ params: { url } }) {
 }
 
 
-// export async function getServerSideProps({query: {url} }){
-//     const respuesta = await fetch(`${process.env.API_URL}anteojos?filters[url]=${url}&populate=imagenes`)
-//     const { data: anteojo } = await respuesta.json()
-
-//     return{
-//         props:{
-//             anteojo
-//         }
-//     }
-// }
 

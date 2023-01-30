@@ -6,8 +6,6 @@ import styles from '../styles/header.module.css'
 function Header() {
 
     const router = useRouter()
-    console.log(router);
-
   return (
     <header className={styles.header}>
         <div className={`contenedor ${styles.barra}`}>

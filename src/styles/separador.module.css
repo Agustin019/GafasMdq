@@ -1,0 +1,27 @@
+.separador {
+    background-image:linear-gradient(to right, rgb(0 0 0 / .45), rgb(0 0 0 / .6)) ,url(../../public/img/anteojos-bg2.webp);
+    background-size: cover;
+    background-position: center center;
+    padding: 10rem 0;
+    margin-top: 10rem;
+    min-width: 100% ;
+}
+@media (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenido {
+        grid-column: 2 / 3;
+    }
+}
+.separador_titulo{
+    font-size: 5rem;
+    color: var(--primary);
+}
+.separador  p {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--white);
+}

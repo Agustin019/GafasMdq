@@ -11,7 +11,7 @@ export default function Tienda({ anteojos }) {
       description='GafasMdq - Tienda | En esta seccion encontraras nuestra coleccion completa de anteojos'
     >
       <main className='contenedor'>
-        <h2 className='heading'>Nuestra coleccion</h2>
+        <h2 className={styles.titulo}>Nuestra coleccion</h2>
         <div className={styles.grid}> 
           {
             anteojos.map(anteojo => (
@@ -37,14 +37,4 @@ export async function getServerSideProps() {
     }
   }
 }
-// export async function getStaticProps(){
-//   const respuesta = await fetch(`${process.env.API_URL}anteojos?populate=imagen`)
-//   const {data: anteojos } = await respuesta.json()
-
-//   return{
-//     props:{
-//       anteojos
-//     }
-//   }
-// } 
 

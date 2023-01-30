@@ -13,3 +13,10 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+.titulo{
+    font-weight: 400;
+    text-align: center;
+    font-size: 5rem;
+    color: var(--black);
+}

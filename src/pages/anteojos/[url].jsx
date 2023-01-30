@@ -11,15 +11,17 @@ export default function AnteojoUrl({ anteojo }) {
             title={`Guitarra ${nombre}`}
         >
             <div className={` ${styles.anteojo}`}>
-                <div className={styles.imagenes_secundarias}>
-
-
-                    <Image  src={imagenes.data[1].attributes.formats.medium.url} alt={`imagen del anteojo:${nombre}`} width={150} height={250} /> 
-                     <Image src={imagenes.data[2].attributes.formats.medium.url} alt={`imagen del anteojo:${nombre}`} width={150} height={250} />  
+                <div className={styles.img}>
+                    <Image src={imagenes.data[0].attributes.formats.medium.url} alt={`imagen del anteojo:${nombre}`} width={400} height={350} />
+                    <div className={styles.img_secundarias}>
+                        <Image src={imagenes.data[1].attributes.formats.medium.url} alt={`imagen del anteojo:${nombre}`} width={150} height={250} />
+                        <Image src={imagenes.data[2].attributes.formats.medium.url} alt={`imagen del anteojo:${nombre}`} width={150} height={250} />
+                    </div>
                 </div>
-                 <Image src={imagenes.data[0].attributes.formats.medium.url} alt={`imagen del anteojo:${nombre}`} width={400} height={350} /> 
+
                 <div className={styles.contenido}>
                     <h3>{nombre}</h3>
+                    <p className={styles.descripcion}>{descripcion}</p>
                     <p className={styles.precio}>${precio}</p>
                     <Link className={styles.enlace} href={''}>Agregar al carrito</Link>
                 </div>

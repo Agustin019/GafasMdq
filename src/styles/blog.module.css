@@ -2,12 +2,28 @@
     max-width: 80rem;
     margin: 0 auto;
 }
-.contenido {
+
+.contenedor,
+.contenedor_url {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.contenedor img{
+    width:35rem;
+    height: 22rem;
+}
+.contenido{
+    display: flex;
+    flex-direction: column;
     padding: 1.5rem;
 }
 .contenido h3 {
-    font-weight: 900;
-    font-size: 2.8rem;
+    font-weight: 500;
+    font-size: 2.2rem;
     margin: 0;
 }
 .fecha {
@@ -19,6 +35,7 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
+    font-size: 1.6rem;
 }
 .texto {
     white-space: pre-wrap;

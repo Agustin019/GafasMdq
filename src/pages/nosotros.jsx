@@ -8,7 +8,7 @@ function Nosotros() {
         description='GafasMdq - Sobre Nosotros'
     >
         <main className='contenedor'>
-          <h2 className='heading'>Nosotros</h2>
+          <h2 className={styles.titulo}>Nosotros</h2>
 
           <div className={styles.contenido}>
             <Image src='/img/anteojos-bg2.webp' width={1000} height={800} alt='Imagen sobre nosotros'/>

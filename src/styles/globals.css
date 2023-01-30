@@ -1,15 +1,17 @@
 :root {
   --primary: #e99401;
   --black: #262626;
-  --white: #FFF;
-  --fuente-principal: 'Outfit', sans-serif;
+  --white: #fff;
+  --fuente-principal: "Outfit", sans-serif;
 }
 html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -22,15 +24,39 @@ img {
   max-width: 100%;
   height: auto;
 }
-[class*="contenedor"], 
+[class*="contenedor"],
 main {
   width: min(95%, 120rem);
   margin: 3rem auto;
 }
-[class*="heading"] {
-  font-size: 4rem;
+[class*="titulo"] {
+  font-weight: 400;
   text-align: center;
-  font-weight: 900;
+  font-size: 5rem;
   color: var(--black);
-  margin: 5rem 0;
+}
+
+.error-enlace,
+.error {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.error-enlace {
+  font-size: 1.8rem;
+  display: block;
+  width: 25rem;
+  margin: 0 auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1rem;
+  background-color: #262626;
+  color: var(--white);
+  transition-property: background;
+  transition-duration: 300ms;
+}
+
+.error-enlace:hover {
+  background-color: var(--primary);
 }

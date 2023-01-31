@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image"
 import styles from '../../styles/anteojoUrl.module.css'
 import Layout from "@/components/layout";
-
+import { Toast } from "@/utils/alert";
 export default function AnteojoUrl({ anteojo, agregarCarrito }) {
 
     const [cantidad, setCantidad] = useState(0)
@@ -12,19 +12,28 @@ export default function AnteojoUrl({ anteojo, agregarCarrito }) {
         e.preventDefault()
 
         if (cantidad < 1) {
-            alert('Seleccione una cantidad')
+            Toast.fire({
+                icon: 'error',
+                title: '¡Seleccione una cantidad valida!',
+                
+              })
             return
         }
 
         const anteojoSeleccionado = {
             id: anteojo[0].id,
-            imagen:imagenes.data[0].attributes.formats.medium.url,
+            imagen: imagenes.data[0].attributes.formats.medium.url,
             nombre,
             precio,
             cantidad,
         }
 
         agregarCarrito(anteojoSeleccionado);
+      
+        Toast.fire({
+            icon: 'success',
+            title: '¡Agregado al carrito correctaemente!',           
+          })
     }
     return (
         <Layout
@@ -44,10 +53,10 @@ export default function AnteojoUrl({ anteojo, agregarCarrito }) {
                     <p className={styles.descripcion}>{descripcion}</p>
                     <p className={styles.precio}>${precio}</p>
 
-                    <form 
+                    <form
                         className={styles.formulario}
                         onSubmit={handleSubmit}
-                        >
+                    >
                         <label htmlFor="cantidad">Cantidad</label>
                         <select
                             onChange={e => setCantidad(+e.target.value)}
